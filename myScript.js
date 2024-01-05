@@ -1,45 +1,33 @@
-@import  url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-h1 {
-  text-align: center;
-}
-body {
-  background-color: #D2691E;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight:400;
-}
-.white-box {
-  background-color: #FFFFFF;
-  color: #D2691E;
-  margin: 40px 18%;
-  padding: 5% 5% 5% 10%;
-  font-family: 'Montserrat', sans-serif;
-  font-weight:300;
-}
+var randomQuote = "";
+var randomAuthor = "";
 
-.random-quote { 
-  font-size: 1.5em;
-  text-align: center;
-  font-weight: 500;
+function getQuote() {
+  $.ajax({
+      url: "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+      method: "GET",
+      dataType: "jsonp",
+      success: function(request) {
+        randomQuote = request.quoteText;
+        randomAuthor = request.quoteAuthor;
+        $('#text').html(randomQuote);
+        if (randomAuthor === "")        { randomAuthor="Unknown";
+        }    $('#author').html(randomAuthor);
+ },
+      error: function(xhr, status, error) 
+{
+    $('#quoteText').text('Not sure what happened there! Click again to generate a new quote!');
+        $('#quoteAuthor').text('Click Below!');
 }
-.random-author {
-  font-size: 1.2em;
-  text-align: right;
+  });
 }
-.button {
-  background-color: #D2691E;
-  color: #FFFFFF;
-  border: none;
-  float: left;
-  margin: 15px 5px auto auto;
-  padding: 5px 10px 5px 10px;
-}
-.button {
-  opacity: 1;
-}
-.button:hover {
-  opacity: 0.75;
-}
-.new-quote-button {
-  float: right;
-}
+  
+
+$(document).ready(function() {
+    $("#new-quote").click(function() {
+      getQuote();
+    });
+   $("#tweet").click(function(){
+    var url="https://twitter.com/intent/tweet?text=\"" + randomQuote + "\" -" + randomAuthor;
+$("#tweet").attr('href', url);
+window.open(url);});
+  });
