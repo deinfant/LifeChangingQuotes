@@ -76,9 +76,9 @@ const stringArray = [
   "經驗是良師，可惜學費貴。"
 ];
 
-
-document.getElementById("counter").innerHTML = "${shownQuotes.length}/${stringArray.length}"
-
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("counter").innerHTML = "${shownQuotes.length}/${stringArray.length}"
+}
 function getRandomString(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
