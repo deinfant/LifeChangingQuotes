@@ -78,7 +78,7 @@ const stringArray = [
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("counter").innerHTML = "${shownQuotes.length}/${stringArray.length}"
-}
+});
 function getRandomString(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
