@@ -1,20 +1,30 @@
-@import  url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import  url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap);
+
 h1 {
   text-align: center;
 }
 body {
-  background-color: #D2691E;
+  background-color: #106cdc;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight:400;
 }
 .white-box {
-  background-color: #FFFFFF;
-  color: #D2691E;
+  background-color: #d5d9ff;
+  color: #106cdc;
   margin: 40px 18%;
   padding: 5% 5% 5% 10%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight:300;
+}
+
+#text {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.trigger-transition {
+  opacity: 0;
 }
 
 .random-quote { 
@@ -27,7 +37,7 @@ body {
   text-align: right;
 }
 .button {
-  background-color: #D2691E;
+  background-color: #106cdc;
   color: #FFFFFF;
   border: none;
   float: left;
