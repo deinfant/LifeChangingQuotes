@@ -1,5 +1,6 @@
 var randomQuote = "";
 var randomAuthor = "";
+let shownQuotes = [];
 
 const stringArray = [
   "好的開始是成功的一半。",
@@ -96,6 +97,9 @@ function getQuote() {
     $("#author").html(randomAuthor);
   }
   button.style.display = "none";
+  if (!shownQuotes.includes(randomElement)) {
+    shownQuotes.push(randomElement);
+  }
   if (element.style.opacity == 0) {
     element.style.opacity = 1;
     ChangeText();
