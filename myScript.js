@@ -76,7 +76,8 @@ const stringArray = [
   "經驗是良師，可惜學費貴。"
 ];
 
-$(#counter).html(`${shownQuotes.length}/${stringArray.length}`);
+
+document.getElementById('counter').innerHTML = '${shownQuotes.length}/${stringArray.length}'
 
 function getRandomString(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
@@ -102,7 +103,8 @@ function getQuote() {
   if (!shownQuotes.includes(randomElement)) {
     shownQuotes.push(randomElement);
   }
-  $(#counter).html(`${shownQuotes.length}/${stringArray.length}`);
+  //$(#counter).html(`${shownQuotes.length}/${stringArray.length}`);
+  document.getElementById('counter').innerHTML = '${shownQuotes.length}/${stringArray.length}'
   if (element.style.opacity == 0) {
     element.style.opacity = 1;
     ChangeText();
