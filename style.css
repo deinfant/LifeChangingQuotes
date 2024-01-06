@@ -1,8 +1,9 @@
 @import  url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap);
 
-h1 {
+.centered {
   text-align: center;
 }
+
 body {
   background-color: #106cdc;
   color: white;
