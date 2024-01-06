@@ -73,7 +73,9 @@ const stringArray = [
   ["你不能以一個握緊的拳頭握手。","印地拉·甘地"],
   ["生命是一頓豐厚的宴席，有人卻寧可挨餓。","利奧·巴卡力士"],
   "只用微笑說話的人，才能擔負重擔。",
-  "經驗是良師，可惜學費貴。"
+  "經驗是良師，可惜學費貴。",
+  "不會寫網站，至少要會問CHATGPT。",
+  "一日之計在於晨，一年之計在於春，一生之計在於勤。"
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -104,7 +106,7 @@ function getQuote() {
     shownQuotes.push(randomElement);
   }
   //$(#counter).html(`${shownQuotes.length}/${stringArray.length}`);
-  document.getElementById("counter").innerHTML = "${shownQuotes.length}/${stringArray.length}"
+  document.getElementById("counter").innerHTML = `${shownQuotes.length}/${stringArray.length}`
   if (element.style.opacity == 0) {
     element.style.opacity = 1;
     ChangeText();
